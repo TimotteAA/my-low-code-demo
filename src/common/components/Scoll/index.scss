@@ -1,0 +1,39 @@
+.scroll-box-outer {
+  //   position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 25px;
+
+  .scroll-box-hidden {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    width: calc(100% + 17px);
+    // width: 100%;
+    border-radius: 25px;
+
+    .scroll-box-inner {
+      width: calc(100% - 17px);
+      display: inline-block;
+      border-radius: 25px;
+    }
+  }
+  .scroll-box-hidden::-webkit-scrollbar {
+    width: 0 !important; /* remove scrollbar space */
+    background: transparent; /* optional: just make scrollbar invisible */
+  }
+  /* 兼容IE10+ */
+  .scroll-box-hidden {
+    -ms-overflow-style: none;
+  }
+
+  /* 但是firefox代码无效 */
+  .scroll-box-hidden {
+    overflow: -moz-scrollbars-none;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
